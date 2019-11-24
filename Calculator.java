@@ -22,11 +22,11 @@ public abstract class Calculator{
             return Math.sqrt(a);
         }
 
-        static void showSqr(double a, double b){
-            System.out.println("Возвести " + a + " в степень " + b + " = " + calculateSqr(a,b));
+        static void showPow(double a, double b){
+            System.out.println("Возвести " + a + " в степень " + b + " = " + calculatePow(a,b));
         }
 
-        static double calculateSqr(double a, double b) {
+        static double calculatePow(double a, double b) {
             return Math.pow(a,b);
         }
 
