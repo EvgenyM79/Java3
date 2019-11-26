@@ -3,9 +3,8 @@ import java.util.Iterator;
 
 public class Main {
 
-
 public static Integer generateInt(){
-    return (int) (Math.random()*3);
+    return (int) (Math.random()*5);
 }
     public static void main(String[] args) {
         ArrayList<ClassUser> listExample = new ArrayList<>();
@@ -16,38 +15,23 @@ public static Integer generateInt(){
         int nName = 0, nFam = 0;
         while (t){
             try {
+                Thread.sleep(300);
+            } catch(InterruptedException ex) {}
             nName = generateInt();
-            System.out.println(nName);
+            //System.out.println(nName);
+            try {
+                Thread.sleep(300);
+            } catch(InterruptedException ex) {}
             nFam = generateInt();
-            System.out.println(nFam);
+            System.out.println(nName + " " + nFam);
             ClassUser user = new ClassUser(name[nName], fam[nFam]);
-            System.out.print(user.name + " " + user.fam);
+            System.out.println(user.name + " " + user.fam);
             if (!listExample.contains(user)) {
                 listExample.add(user);
             }
             else {
                 t = false;
             }
-            //listExample.add(user);
-            //System.out.println(user.name + " " + user.fam);
-                 /*   if (listExample.get(i).equals(user)) {
-                        System.out.println(listExample.get(i).name + " list " + listExample.get(i).fam);
-                        System.out.print(user.name + " =list " + user.fam);
-                        t = false;
-                    } else {
-                        listExample.add(user);
-                        System.out.println(user.name + " + " + user.fam);
-                        count ++;
-                    }
-                    //listExample.add(user);
-                    //System.out.println(listExample.get(count).name + " " + listExample.get(count).fam);
-                }
-            }
-            else {
-                listExample.add(user);
-                System.out.println(user.name + " + " + user.fam);
-                count ++;
-                  */
          }
     }
 }
