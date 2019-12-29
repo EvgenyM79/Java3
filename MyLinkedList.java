@@ -1,13 +1,11 @@
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 public class MyLinkedList {
 
     public class Node {
-        private int value;
+        private Double value;
         private Node next;
         private Node prev;
 
-        public Node(int val){
+        public Node(Double val){
             this.value = val;
         }
 
@@ -23,7 +21,7 @@ public class MyLinkedList {
     public Node tempForReplace = null;
     private int size = 0;
 
-    public void addFirst(int val) {
+    public void addFirst(Double val) {
         Node newNode = new Node(val);
         newNode.next = null;
         newNode.prev = null;
@@ -44,7 +42,7 @@ public class MyLinkedList {
         System.out.println("Всего элементов в списке " + size);
     }
 
-    public void addLast(int val) {
+    public void addLast(Double val) {
         Node newNode = new Node(val);
         System.out.println("Добавление " + val + " в конец списка");
         if (isEmpty()) {
@@ -59,7 +57,7 @@ public class MyLinkedList {
         size ++;
     }
 
-    public void addBetween(int val, int place) {
+    public void addBetween(Double val, int place) {
         Node newNode = new Node(val);
         Node temp = first;
         System.out.println("Добавление " + val + " в позицию " + place);
@@ -86,7 +84,7 @@ public class MyLinkedList {
     public void sortList(String how) {
         Node temp = first;
         boolean still = false;
-        int tempInt = 0;
+        double tempInt = 0;
         System.out.println("Сортировка к " + how);
         do {
             if (temp.value < temp.next.value && how.equals("min") || temp.value > temp.next.value && how.equals("max")) {
@@ -125,7 +123,6 @@ public class MyLinkedList {
         size --;
     }
 
-
     public boolean isEmpty() {
         return (first == null);
     }
@@ -138,6 +135,19 @@ public class MyLinkedList {
         }
         System.out.print( " | эл-тов " + size);
         System.out.println();
+    }
+
+    public double howElement(String how) {
+        Node temp = first;
+        double howElement = first.value;
+        while (temp != null) {
+            if (howElement > temp.value && how.equals("min"))
+                howElement = temp.value;
+            if (howElement < temp.value && how.equals("max"))
+                howElement = temp.value;
+            temp = temp.next;
+        }
+        return howElement;
     }
 
     public void removeFirst() {
@@ -153,6 +163,18 @@ public class MyLinkedList {
             System.out.println("С начала(списка) удалено " + temp.value);
         }
         size --;
+    }
+
+    public void addAll(Double val) {
+        System.out.println("Заполнение всего LinkedList числом:" + val);
+        Node temp = first;
+        while (temp != null) {
+            temp.value = val;
+            temp.displayNode();
+            temp = temp.next;
+        }
+        System.out.print( " | эл-тов " + size);
+        System.out.println();
     }
 
     public void removeLast() {
