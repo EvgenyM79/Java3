@@ -1,33 +1,5 @@
 public class CalcUtil extends CalcUtilAbstract {
 
-    /*private String[] masForCalk;
-    private String stroka;
-    private Integer size;
-    private Byte[] howCalk;
-    private Double[] forLong;*/
-
-    /*public void Expert(String[] masForCalk){
-        masForCalk = CalcUtilAbstract.itogExpert(masForCalk);
-    }
-
-    public void createMatr(String stroka){
-        String[] masForCalk = stroka.split(" ");
-        masForCalk = CalcUtilAbstract.itogExpert(masForCalk);
-        size = masForCalk.length;
-        howCalk = new Byte[size]; // массив, который показывает, очередь вычислений.
-        forLong = new Double[size]; // массив чисел и знаков
-        for (int i = 1; i < size; i += 2 ){
-            if (masForCalk[i].equals(MathEnum.MATH_ENUM1)  || masForCalk[i].equals(MathEnum.MATH_ENUM2)) {
-                howCalk[i] = 1;
-            }
-            else {
-                howCalk[i] = 2;
-            }
-        }
-    }
-
-     */
-
     public Double calkresult(String stroka){
         String[] masForCalk = stroka.split(" ");
         masForCalk = CalcUtilAbstract.itogExpert(masForCalk);
